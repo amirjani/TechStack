@@ -34,7 +34,42 @@ as we see in the above image, our application may have below parts:
 
 ![DataLakes](https://d1.awsstatic.com/Data%20Lakes%20Storage%20Infrastructure/Data-Lake-Storage-Infrastructure.aa068b26fd43e26640fd3d700bc3061a8748fdaa.png)
 
-# Main Methods 
+## Creating, configuring, and working with Amazon S3 buckets
+To store your data in Amazon S3, you work with resources known as buckets and objects. A bucket is a container for objects. An object is a file and any metadata that describes that file.
+
+**Bucket naming rules**
+
+- Bucket names must be between 3 and 63 characters long.
+- Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-).
+- Bucket names must begin and end with a letter or number.
+- Bucket names must not be formatted as an IP address (for example, 192.168.5.4).
+- Bucket names must not start with the prefix xn--.
+- Bucket names must not end with the suffix -s3alias. This suffix is reserved for access point alias names
+- Bucket names must be unique within a partition. A partition is a grouping of Regions. AWS currently has three partitions: aws (Standard Regions), aws-cn (China Regions), and aws-us-gov (AWS GovCloud [US] Regions).
+- Buckets used with Amazon S3 Transfer Acceleration can't have dots (.) in their names. For more information about Transfer Acceleration
+
+
+## Working With Objects
+Amazon S3 is an object store that uses unique key-values to store as many objects as you want. You store these objects in one or more buckets, and each object can be up to 5 TB in size. An object consists of the following:
+
+## Notes
+Using multipart upload provides the following advantages:
+
+- Improved throughput - You can upload parts in parallel to improve throughput.
+- Quick recovery from any network issues - Smaller part size minimizes the impact of restarting a failed upload due to a network error.
+- Pause and resume object uploads - You can upload object parts over time. After you initiate a multipart upload, there is no expiry; you must explicitly complete or stop the multipart upload.
+- Begin an upload before you know the final object size - You can upload an object as you are creating it
+
+We recommend that you use multipart upload in the following ways:
+- If you're uploading large objects over a stable high-bandwidth network, use multipart upload to maximize the use of your available bandwidth by uploading object parts in parallel for multi-threaded performance.
+- If you're uploading over a spotty network, use multipart upload to increase resiliency to network errors by avoiding upload restarts. When using multipart upload, you need to retry uploading only parts that are interrupted during the upload. You don't need to restart uploading your object from the beginning.
+
+**Multipart upload process**
+
+Multipart upload is a three-step process: You initiate the upload, you upload the object parts, and after you have uploaded all the parts, you complete the multipart upload. Upon receiving the complete multipart upload request, Amazon S3 constructs the object from the uploaded parts, and you can then access the object just as you would any other object in your bucket.
+
+
+## Main Methods 
 
 > Multipart upload allows you to upload a single object as a set of parts. Each part is a contiguous portion of the object's data. You can upload these object parts independently and in any order.
 
@@ -60,15 +95,4 @@ as we see in the above image, our application may have below parts:
 | PutObject | Adds an object to a bucket. | ✔︎
 | RestoreObject | Restores an archived copy of an object back into Amazon S3. | ✔︎
 | UploadPart | Uploads a part in a multipart upload. | ✔︎
-
-## Notes
-upload and multipart upload perform the same action but there are the few advantage of multipart upload
-
-- You can upload parts in parallel to improve throughput.
-- Smaller part size minimizes the impact of restarting a failed upload due to a network error.
-- You can upload object parts over time. Once you initiate a multipart upload
-- there is no expiry; you must explicitly complete or abort the multipart upload.
-- You can upload an object as you are creating it.
-
-So you can decide which one you should go with according to your need , multipart is recommended when the object you are uploading is big in size .
 
