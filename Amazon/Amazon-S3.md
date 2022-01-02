@@ -50,7 +50,7 @@ To store your data in Amazon S3, you work with resources known as buckets and ob
 
 
 ## Working With Objects
-Amazon S3 is an object store that uses unique key-values to store as many objects as you want. You store these objects in one or more buckets, and each object can be up to 5 TB in size. An object consists of the following:
+Amazon S3 is an object store that uses unique key-values to store as many objects as you want. You store these objects in one or more buckets, and each object can be up to 5 TB in size
 
 ## Notes
 Using multipart upload provides the following advantages:
@@ -75,23 +75,23 @@ Multipart upload is a three-step process: You initiate the upload, you upload th
 
 | Method | Description | Necessity
 | ------------- | ------------- | ------------- |
-| AbortMultipartUpload | After a multipart upload is aborted, no additional parts can be uploaded using that upload ID  | ✕
-| CompleteMultipartUpload  | Completes a multipart upload by assembling previously uploaded parts  | ✕
+| AbortMultipartUpload | After a multipart upload is aborted, no additional parts can be uploaded using that upload ID  | ✔︎
+| CompleteMultipartUpload  | Completes a multipart upload by assembling previously uploaded parts  | ✔︎
 | CopyObject | Creates a copy of an object that is already stored in Amazon S3. | ✔︎
 | CreateBucket | you must register with Amazon S3 and have a valid AWS Access Key ID to authenticate requests | ✔︎
-| CreateMultipartUpload | This action initiates a multipart upload and returns an upload ID | ✕
+| CreateMultipartUpload | This action initiates a multipart upload and returns an upload ID | ✔︎
 | DeleteBucket | Deletes the S3 bucket | ✔︎
-| DeleteBucketCors | Deletes the cors configuration information set for the bucket | ✕
+| DeleteBucketCors | Deletes the cors configuration information set for the bucket | ✔︎
 | DeleteObject | Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. | ✔︎
 | DeleteObjects | This action enables you to delete multiple objects from a bucket using a single HTTP request. | ✔︎
-| GetBucketCors | Returns the cors configuration information set for the bucket. | ✕
+| GetBucketCors | Returns the cors configuration information set for the bucket. | ✔︎
 | GetObject | Retrieves objects from Amazon S3. | ✔︎
-| HeadObject | The HEAD action retrieves metadata from an object without returning the object itself. | ✕
+| HeadObject | The HEAD action retrieves metadata from an object without returning the object itself. | ✔︎
 | ListBuckets | Returns a list of all buckets owned by the authenticated sender of the request. | ✔︎
-| ListMultipartUploads | This action lists in-progress multipart uploads. | ✕
+| ListMultipartUploads | This action lists in-progress multipart uploads. | ✔︎
 | ListObjects | Returns some or all (up to 1,000) of the objects in a bucket. | ✔︎
-| ListParts | Lists the parts that have been uploaded for a specific multipart upload. | ✕
-| PutBucketCors | Sets the cors configuration for your bucket. | ✕
+| ListParts | Lists the parts that have been uploaded for a specific multipart upload. | ✔︎
+| PutBucketCors | Sets the cors configuration for your bucket. | ✔︎
 | PutObject | Adds an object to a bucket. | ✔︎
 | RestoreObject | Restores an archived copy of an object back into Amazon S3. | ✔︎
 | UploadPart | Uploads a part in a multipart upload. | ✔︎
