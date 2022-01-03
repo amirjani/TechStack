@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff12890d-fa36-44c8-9860-75c49c981204" name="Changes" comment="" />
+    <list default="true" id="ff12890d-fa36-44c8-9860-75c49c981204" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/testing/integration-test.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
