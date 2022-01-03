@@ -23,7 +23,7 @@
 15. Be very conservative in applying the typical Don’t Repeat Yourself (DRY) principles to unit tests.
 16. Hide everything that is not important to see in that particular test.
 17. Write your unit tests in a way that makes life easy for the person who will maintain them
-18. Automate your testing
+18. Automate your testing (in CI/CD Pipelines)
 19. Test Across Boundaries
 20. Write Simple “Fastball-Down-the-Middle” Tests First
 21. Constantly Run Your Tests
