@@ -32,6 +32,16 @@ When applying these guidelines to a codebase, it is recommended that changes
 are made at a package (or larger) level: application at a sub-package level
 violates the above concern by introducing multiple styles into the same code.
 
+### Structure of the File
+
+Organize your files as
+
+- Imports
+- Type Declarations
+- Global Constanst
+- Global Varaibles
+- Functions
+
 ### Group Similar Declarations
 
 Go supports grouping similar declarations.
