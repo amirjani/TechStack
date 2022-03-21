@@ -17,3 +17,19 @@ A domain model is not a particular diagram; it is the idea that the diagram is i
 
 > The heart of software is its ability to solve domain-related problems for its user.
 
+## Ingredients of Effective Modeling
+1. __Binding the model and the implementation.__
+2. __Cultivating a language based on the model.__
+3. __Developing a knowledge-rich model.__
+4. __Distilling the model.__
+5. __Brainstorming and experimenting__
+
+It is the creativity of brainstorming and massive experimentation, leveraged through a model-based language and disciplined by the feedback loop through implementation, that makes it possible to find a knowledge-rich model and distill it
+
+> Good programmers will naturally start to abstract and develop a model that can do more work
+
+## Deep Model
+Useful models seldom lie on the surface. As we come to understand the domain and the needs of the application, we usually discard superficial model elements that seemed important in the beginning, or we shift their perspective
+
+
+> Knowledge crunching is an exploration, and you can’t know where you will end up.
