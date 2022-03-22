@@ -55,3 +55,23 @@ The UBIQUITOUS LANGUAGE is the primary carrier of the aspects of design that don
 Play with the model as you talk about the system. Describe scenarios out loud using the elements and interactions of the model, combining concepts in ways allowed by the model. Find easier ways to say what you need to say, and then take those new ideas back down to the diagrams and code.
 
 If sophisticated domain experts don’t understand the model, there is something wrong with the model.
+
+![Language](./ubilang.png)
+
+## Documents and Diagrams
+Some people are naturally visual, and diagrams help people grasp certain kinds of information. \
+Diagrams are a means of communication and explanation, and they facilitate brainstorming.They show design constraints, but they are not design specifications in every detail. They represent the skeletons of ideas.
+
+__The vital detail about the design is captured in the code.__ A well-written implementation should be transparent, revealing the model underlying it.
+
+Always remember that the model is not the diagram. The diagram’s purpose is to help communicate and explain the model.
+
+__Documents Should Complement Code and Speech.__
+
+__Documents Should Work for a Living and Stay Current__
+
+__A document must be involved in project activities__
+
+The greatest value of a design document is to explain the concepts of the model, help in navigating the detail of the code, and perhaps give some insight into the model’s intended style of use.
+
+The UBIQUITOUS LANGUAGE allows other documents, such as requirements specifications, to be more concise and less ambiguous
