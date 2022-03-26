@@ -112,3 +112,43 @@ __Second__ problem was the indirectness of feedback from the interaction of the 
 If the people who write the code do not feel responsible for the model, or don’t understand how to make the model work for an application, then the model has nothing to do with the software.
 
 Any technical person contributing to the model must spend some time touching the code, whatever primary role he or she plays on the project. Anyone responsible for changing code must learn to express a model through the code. Every developer must be involved in some level of discussion about the model and have contact with domain experts. Those who contribute in different ways must consciously engage those who touch the code in a dynamic exchange of model ideas through the UBIQUITOUS LANGUAGE.
+
+## The Building Blocks of a Model-Driven Design
+
+To keep a software implementation crisp and in lockstep with a model, in spite of messy realities, you must apply the best practices of modeling and design
+
+The design style in this book largely follows the principle of “responsibility-driven design”
+
+To make the domain-driven design process resilient, developers need to understand how the well-known fundamentals support MODEL-DRIVEN DESIGN, so they can compromise without derailing.
+
+__pattern language__: which will show how subtle model distinctions and design decisions affect the domain-driven design process
+
+__navigation map__: It shows the patterns that will be presented in the work.
+
+Sharing these standard patterns brings order to the design and makes it easier for team members to understand each other’s work.
+
+> Developing a good domain model is an art.
+
+Isolating the domain design from the mass of other concerns in the software system will greatly clarify the design’s connection to the model. Defining model elements according to certain distinctions sharpens their meanings
+
+![Language](./navigation-map.png)
+
+# Four. Isolating the Domain
+The part of the software that specifically solves problems from the domain usually constitutes only a small portion of the entire software system, although its importance is disproportionate to its size. 
+
+We need to decouple the domain objects from other functions of the system, so we can avoid confusing the domain concepts with other concepts related only to software technology or losing sight of the domain altogether in the mass of the system.
+
+![Language](./layered-architecture.png)
+
+Creating programs that can handle very complex tasks calls for separation of concerns, allowing concentration on different parts of the design in isolation. At the same time, the intricate interactions within the system must be maintained in spite of the separation.
+
+The essential principle is that any element of a layer depends only on other elements in the same layer or on elements of the layers “beneath” it. Communication upward must pass through some indirect mechanism. The value of layers is that each specializes in a particular aspect of a computer program. This specialization allows more cohesive designs of each aspect, and it makes these designs much easier to interpret.
+
+![Language](./layered-architecture-2.png)
+
+
+Partition a complex program into layers. Develop a design within each layer that is cohesive and that depends only on the layers below. Follow standard architectural patterns to provide loose coupling to the layers above. Concentrate all the code related to the domain model in one layer and isolate it from the user interface, application, and infrastructure code. The domain objects, free of the responsibility of displaying themselves, storing themselves, managing application tasks, and so forth, can be focused on expressing the domain model. This allows a model to evolve to be rich enough and clear enough to capture essential business knowledge and put it to work
+
+Layers are meant to be loosely coupled, with design dependencies in only one direction. Upper layers can use or manipulate elements of lower ones straightforwardly by calling their public interfaces, holding references to them (at least temporarily), and generally using conventional means of interaction. But when an object of a lower level needs to communicate upward (beyond answering a direct query), we need another mechanism, drawing on architectural patterns for relating layers such as callbacks or OBSERVERS
+
+__The Domain Layer Is Where the Model Lives__ 
